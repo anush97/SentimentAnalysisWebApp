@@ -31,7 +31,7 @@ def allowed_file(filename):
 
 def convert_to_wav(audio_path):
     target_path = os.path.splitext(audio_path)[0] + '.wav'
-    subprocess.run(['ffmpeg', '-i', audio_path, target_path])
+    subprocess.run(['ffmpeg', '-y', '-i', audio_path, target_path])
     os.remove(audio_path)  
     return target_path
 
@@ -81,6 +81,9 @@ def upload_file():
         
         filename = secure_filename(file.filename)
         audio_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        if os.path.exists(audio_path):
+            os.remove(audio_path)
+        # Overwrite the existing file if it already exists
         file.save(audio_path)
         
         if filename.rsplit('.', 1)[1].lower() != 'wav':
@@ -103,3 +106,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
