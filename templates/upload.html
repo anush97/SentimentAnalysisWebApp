@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Upload for Sentiment Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Audio Upload for Sentiment Analysis</h2>
+    <p>Please upload an audio file featuring a dialogue between two or more speakers. The analysis will focus on sentiments and psychological insights derived from their conversation.</p>
+    
+    <form action="/upload" method="post" enctype="multipart/form-data" class="mb-3">
+        <div class="custom-file">
+            <input type="file" name="audio" class="custom-file-input" id="customFile" required>
+            <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Upload and Analyze</button>
+    </form>
+
+    {% if sentiment_analysis %}
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Sentiment Analysis:</h4>
+        <p>{{ sentiment_analysis }}</p>
+    </div>
+    {% endif %}
+    
+    {% if transcript %}
+    <div class="alert alert-secondary" role="alert">
+        <h4 class="alert-heading">Transcript:</h4>
+        <pre>{{ transcript }}</pre>
+    </div>
+    {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+// Script to update the label of the custom file input to match the name of the file selected
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+</body>
+</html>
