@@ -14,7 +14,14 @@ load_dotenv()
 deepgram_api_key = os.getenv('DEEPGRAM_API_KEY')
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
-app.config['UPLOAD_FOLDER'] = '/Users/anushkasharma/Desktop/Audio_sentiment/uploads'
+current_work_directory = os.getcwd()
+
+# Construct the path to the uploads folder dynamically
+uploads_path = os.path.join(current_work_directory, 'uploads')
+
+# Set the upload folder in the app configuration
+app.config['UPLOAD_FOLDER'] = uploads_path
+
 
 app.config['ALLOWED_EXTENSIONS'] = {'wav', 'mp3', 'flac', 'ogg', 'm4a'}
 
