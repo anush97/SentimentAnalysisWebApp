@@ -14,7 +14,7 @@ load_dotenv()
 deepgram_api_key = os.getenv('DEEPGRAM_API_KEY')
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
-current_work_directory = os.getcwd()
+current_work_directory = os.path.dirname(os.path.abspath(__file__))
 
 
 uploads_path = os.path.join(current_work_directory, 'uploads')
