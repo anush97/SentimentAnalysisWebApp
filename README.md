@@ -30,7 +30,8 @@ This web application allows hiring managers to upload audio files of dialogues a
 2. The application will process the file and display sentiment and psychological insights derived from the conversation.
 
 ## Deployment
-This application is designed to be deployed on a cloud platform that supports Python applications, such as Google Cloud Platform, AWS, or Heroku.
+This application is deployed on a Virtual Machine on Google Cloud Platform : ``` 34.130.140.113 ```
+
 
 ## Challenges Faced
 - Handling asynchronous API calls within the synchronous Flask framework.
