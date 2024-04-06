@@ -1,7 +1,7 @@
 # Audio Sentiment Analysis Web Application
 
 ## Project Overview
-This web application allows hiring managers to upload audio files of dialogues and receive sentiment and psychological insights about the conversation. The application uses the Deepgram API for speech-to-text transcription and the OpenAI API for sentiment analysis.
+This web application allows users to upload audio files of dialogues and receive sentiment and psychological insights about the conversation. The application uses the Deepgram API for speech-to-text transcription and the OpenAI API for sentiment analysis.
 
 ## Technologies Used
 - Flask (A Python web framework)
