@@ -30,7 +30,7 @@ This web application allows hiring managers to upload audio files of dialogues a
 2. The application will process the file and display sentiment and psychological insights derived from the conversation.
 
 ## Deployment
-This application is deployed on a Virtual Machine on Google Cloud Platform : ``` 34.130.140.113 ```
+This application is deployed on a Virtual Machine on Google Cloud Platform : ``` http://34.130.102.62 ```
 
 
 ## Challenges Faced
